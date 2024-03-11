@@ -1,0 +1,27 @@
+function passed inside a function callxvxfzcv
+dx
+g
+dsxg
+
+dsxgds
+xzg
+sad
+g
+sadg
+sadg
+dsxgxg
+dsxggf
+sadzfg
+dsv
+
+
+require(modules)
+require("./fs") // specifying path
+require("fs") // name of module 
+
+core node libraries 
+
+
+
+ // IN NODE JS FOR ANY FUNCTIONLITY WE HAVE TO FIND OUT THE MODULE 
+ FROM CORE OR NPM MODULES / NODE MODULES 
