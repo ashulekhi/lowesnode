@@ -1,3 +1,21 @@
+var fs = require("fs")
+const EventEmitter  = require("events")
+
+
+exports.utkarsh = function(filename){
+    var emitter  =new EventEmitter()
+    fs.writeFile(filename,"Some Random text", function(error){
+        if(error){
+            emitter.emit("ERROR")
+        }
+        else{
+            emitter.emit("SUCCESS")
+        }
+})
+
+return emitter
+}
+
 exports.shivani = function(filename,callback){
   fs.readFile(filename, function(error,data){
     if(error){

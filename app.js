@@ -4,13 +4,32 @@ const Resources = require("./resoiurces")
 
 const app = Express()
 
+app.get("/writefile", function(req,res){
+    Resources.utkarsh("demofile.txt")
+    .on("SUCCESS", function(data){
+        res.send({
+            data:data || "File Created"
+        })
+    })
+    .on("ERROR", function(){
+    res.status(500).send()
+
+    })
+})
+
 app.get("/neahreadfile", function(req,res){
-   Resources.neha("notes.txt").then(function(){}, function(){})
+   Resources.neha("notes.txt").then(function(data){
+    res.send({
+        data:data
+    })
+   }, function(error){
+    res.status(500).send()
+
+   })
 })
 
 app.get("/readfile", function(req,res){
-    Resources.shivani()
-    res.send()
+    
     Resources.shivani("notes.txt", function(error,data){
         if(error){
             res.status(500).send()
@@ -23,20 +42,8 @@ app.get("/readfile", function(req,res){
     })
 })
 
-// app.methodname()
-app.get("/rs", function(req,res){
-    fs.readFile("notes.txt", function(error,data){
-        if(error){
-            res.status(500).send()
-        }
-        else{
-            var notes = data.toString()
-            res.send({
-                data:notes
-            })
-        }
-    })
-})
+
+
 
 app.get("/", function(request , response){
     console.log("request details will be in first object" )
